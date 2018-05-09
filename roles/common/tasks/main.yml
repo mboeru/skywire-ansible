@@ -1,0 +1,31 @@
+---
+# tasks file for common
+
+- name: install common packages
+  apt: name={{ item }} state=latest
+  tags: default_packages
+  with_items:
+   - ethtool
+   - dstat
+   - cifs-utils
+   - bash-completion
+   - tcpdump
+   - iotop
+   - lshw
+   - mc
+   - telnet
+   - unzip
+   - zip
+   - htop
+   - vim
+   - git
+   - ntp
+   - curl
+   - mercurial
+   - make
+   - binutils
+   - gcc
+   - g++
+   - bison
+   - screen
+   - ca-certificates

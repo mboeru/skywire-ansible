@@ -1,0 +1,17 @@
+---
+# tasks file for skywire-manager
+
+- copy:
+    src: skywire-manager.service
+    dest: /etc/systemd/system/skywire-manager.service
+  register: newunit
+
+- systemd:
+    daemon_reload: yes
+
+- systemd:
+    name: skywire-manager
+    enabled: True
+    state: started    
+  when: newunit.changed
+  

@@ -1,0 +1,13 @@
+[Unit]
+Description=Skywire Manager
+After=syslog.target network.target
+
+[Service]
+Type=simple
+#PIDFile=/var/spool/postfix/pid/master.pid
+EnvironmentFile=/etc/default/skywire-manager
+ExecStart=/root/go/bin/manager -web-dir /root/go/src/github.com/skycoin/skywire/static/skywire-manager
+ExecStop=kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  user: root
+  port: 22
+  roles:
+   - { role: common, tags: common }
+   - { role: go, tags: go }
+   - { role: skywire, tags: skywire }
+   - { role: skywire-node, tags: skywire-node }
+
+- hosts: manager
+  user: root
+  port: 22
+  roles:
+   - { role: skywire-manager, tags: skywire-manager }

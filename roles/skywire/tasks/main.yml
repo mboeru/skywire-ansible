@@ -1,0 +1,21 @@
+---
+# tasks file for sky
+
+- git:
+    repo: 'https://github.com/skycoin/skywire.git'
+    dest: "{{ gopath }}/src/github.com/skycoin/skywire"
+    version: 3e70c3235a51718c1941afb1ed33e0b1fe82ed6d
+  register: git
+  tags: build
+
+- shell: go install ./...
+  args:
+    chdir: "/root/go/src/github.com/skycoin/skywire/"
+  environment: "{{ go_environment }}"
+  register: xxx
+  tags: build
+#  when: git.changed
+
+- debug:
+    msg: "{{ xxx }}"
+  tags: build

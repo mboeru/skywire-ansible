@@ -1,0 +1,10 @@
+---
+# defaults file for sky
+
+gopath: "/root/go"
+go_bin_path: /usr/local/bin/go
+
+go_environment:
+  GOPATH: "{{ gopath }}"
+  GOBIN: "{{ go_bin_path }}"
+  PATH: "/root/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/go/bin"

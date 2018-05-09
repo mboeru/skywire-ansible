@@ -1,0 +1,13 @@
+[Unit]
+Description=Skywire Node
+After=syslog.target network.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/skywire-node
+ExecStartPre=/bin/sleep 30
+ExecStart=/root/go/bin/node -connect-manager -manager-address {{ hostvars[groups['manager'][0]]['ansible_eth0']['ipv4']['address'] }}:5998 -manager-web {{ hostvars[groups['manager'][0]]['ansible_eth0']['ipv4']['address'] }}:8000
+ExecStop=kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

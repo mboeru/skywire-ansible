@@ -1,0 +1,7 @@
+[manager]
+skynode01 ansible_ssh_host=192.168.1.X1 ansible_port=22
+
+[nodes]
+skynode02 ansible_ssh_host=192.168.1.X2 ansible_port=22
+skynode03 ansible_ssh_host=192.168.1.X3 ansible_port=22
+skynode04 ansible_ssh_host=192.168.1.X4 ansible_port=22
