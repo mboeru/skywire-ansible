@@ -4,7 +4,7 @@
 - git:
     repo: 'https://github.com/skycoin/skywire.git'
     dest: "{{ gopath }}/src/github.com/skycoin/skywire"
-    version: 3e70c3235a51718c1941afb1ed33e0b1fe82ed6d
+    version: master
   register: git
   tags: build
 
