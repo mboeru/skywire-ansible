@@ -1,7 +1,7 @@
 Skywire Setup with ansible
 ===
 
-Since the latest master from skywire is not working I am checking out commit 3e70c3235a51718c1941afb1ed33e0b1fe82ed6d. If you want to switch to master or other branches of skywire project change roles/skywire/tasks/main.yml
+This pull the lastest master from skycoin/skywire
 
 This asumes you are using Orange Pi Prime and are using Armbian ubuntu version from https://www.armbian.com/orange-pi-prime/
 
