@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Check if sockss is running
+# -x flag only match processes whose name (or command line if -f is
+# specified) exactly match the pattern.
+
+if pidof "./sockss" > /dev/null
+then
+    echo "Running"
+else
+  export GOPATH=/root/go
+    cd $GOPATH/bin
+        ./sockss -node-address :5000 > /dev/null 2>&1 & echo $! > socks.pid
+fi
